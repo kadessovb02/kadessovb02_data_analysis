@@ -19,20 +19,20 @@ def newImg():
         b = random.randint(0, 255)
         bb.append(b)
         img.putpixel((x, y), (r, g, b))
-    min = 5
-    indexmin = 0
+
     for i in range(0, 100):
         for j in range(0, 100):
+            min = 10000
+            indexmin = -1
             for k in range(0, 10):
                 t = (xx[k] - i)**2 + (yy[k] - j)**2
                 if (t < min):
-                    t = min
+                    min = t
                     indexmin = k
             img.putpixel((i, j), (rr[indexmin], gg[indexmin], bb[indexmin]))
-            
-            
-            
+
+
+
     return img
 visualization = newImg()
-visualization.save('ans.png')
 visualization.show()
